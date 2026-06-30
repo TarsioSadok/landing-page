@@ -1,0 +1,427 @@
+/* ===================================================
+   PORTFÓLIO — TARSIO SADOK DA SILVA
+   Identidade visual: "dashboard de dados"
+   Paleta índigo profundo + violeta + teal, inspirada em
+   ferramentas de análise de dados (Power BI, notebooks).
+   =================================================== */
+
+/* ---------- 1. RESET E VARIÁVEIS ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0b0f1a;
+    --bg-alt: #11182b;
+    --card: #161f37;
+    --line: #232d4a;
+    --text: #eef1fb;
+    --muted: #8d96b8;
+    --violet: #7c5cff;
+    --teal: #34d6c4;
+
+    --font-display: 'Sora', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    background-image: radial-gradient(circle, var(--line) 1px, transparent 1px);
+    background-size: 28px 28px;
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.65;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+}
+
+/* ---------- 2. CABEÇALHO ---------- */
+header {
+    background: linear-gradient(160deg, var(--bg-alt), var(--bg) 70%);
+    border-bottom: 1px solid var(--line);
+    padding: 56px 6vw 0;
+}
+
+.header-container {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding-bottom: 44px;
+}
+
+.avatar {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid var(--violet);
+    box-shadow: 0 0 0 6px var(--bg-alt), 0 8px 24px rgba(124, 92, 255, 0.25);
+    flex-shrink: 0;
+}
+
+.header-info {
+    max-width: 620px;
+}
+
+.eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--teal);
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+}
+
+.header-info h1 {
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.header-info .tagline {
+    color: var(--muted);
+    font-size: 1.08rem;
+    margin-bottom: 18px;
+}
+
+.header-info .tagline strong {
+    color: var(--text);
+}
+
+.header-meta {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+.header-meta span {
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+/* ---------- 3. NAVEGAÇÃO ---------- */
+nav {
+    max-width: 1080px;
+    margin: 0 auto;
+    border-top: 1px solid var(--line);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    display: block;
+    padding: 18px 24px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--muted);
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: var(--violet);
+    background: rgba(124, 92, 255, 0.08);
+}
+
+/* ---------- 4. LAYOUT PRINCIPAL ---------- */
+.main-content {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 52px 6vw;
+    display: grid;
+    grid-template-columns: 2.1fr 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* ---------- 5. CARDS ---------- */
+.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 32px;
+}
+
+.card h2 {
+    font-size: 1.35rem;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card h2::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 0 4px rgba(52, 214, 196, 0.15);
+}
+
+.card p {
+    color: var(--muted);
+    margin-bottom: 14px;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+.status-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--teal);
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--line);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
+    box-shadow: 0 0 8px var(--teal);
+}
+
+/* ---------- 6. HABILIDADES ---------- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-group h4 {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tags span {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text);
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.skill-tags span:hover {
+    border-color: var(--violet);
+    color: var(--violet);
+}
+
+/* ---------- 7. PROJETOS ---------- */
+.project-item {
+    padding: 22px 0;
+    border-top: 1px solid var(--line);
+}
+
+.project-item:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.project-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--violet);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+}
+
+.project-item h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.project-item p {
+    margin-bottom: 12px;
+}
+
+.project-link {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--teal);
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* ---------- 8. SIDEBAR / ASIDE ---------- */
+.sidebar h2 {
+    font-size: 1.2rem;
+}
+
+.sidebar h3 {
+    font-size: 0.95rem;
+    color: var(--teal);
+    font-family: var(--font-mono);
+    margin: 22px 0 12px;
+}
+
+.social-links li {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.92rem;
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.social-links a:hover {
+    border-color: var(--violet);
+    color: var(--violet);
+}
+
+.cert-list li {
+    font-size: 0.85rem;
+    color: var(--muted);
+    padding: 8px 0 8px 18px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+}
+
+.cert-list li:last-child {
+    border-bottom: none;
+}
+
+.cert-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+}
+
+.sidebar hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 24px 0;
+}
+
+/* ---------- 9. RODAPÉ ---------- */
+footer {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--line);
+    text-align: center;
+    padding: 32px 6vw;
+}
+
+footer p {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: var(--teal);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- 10. RESPONSIVIDADE ---------- */
+@media (max-width: 880px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 40px 6vw 0;
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-meta {
+        justify-content: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card {
+        padding: 24px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
